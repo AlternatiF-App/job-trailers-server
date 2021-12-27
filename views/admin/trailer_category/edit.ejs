@@ -1,0 +1,63 @@
+<%- include ../../components/header.ejs %>
+<%- include ../../components/sidebar.ejs %>
+<%- include ../../components/navbar.ejs %>
+
+    <div class="header bg-primary pb-6">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+              <h6 class="h2 text-white d-inline-block mb-0">Trailer Category</h6>
+              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                  <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="/trailer-category">Trailer Category</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Insert</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header border-0">
+              <h3 class="mb-0">Edit Trailer Category Name of <%= trailerCategory.name %></h3>
+            </div>
+
+            <form action="/trailer-category/edit/<%= trailerCategory._id %>?_method=put" method="post">
+                <div class="pl-lg-4">
+                    <div class="col">
+                        <div class="row align-items-center">
+                            <div class="form-group col-lg-6">
+                                <label class="form-control-label" for="name">Trailer Category Name</label>
+                                <input type="text" value="<%= trailerCategory.name %>" name="name" id="name" class="form-control rounded-lg px-4" placeholder="Insert trailer category name" required>
+                            </div>
+                            <div class="d-flex align-items-center ml-3 pt-1">
+                                <button type="submit" class="btn py-2 btn-primary rounded-lg">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </form>
+
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6">
+            <div class="copyright text-center  text-lg-left  text-muted">
+              &copy; 2021 <a href="#" class="font-weight-bold ml-1" target="_blank">Ahmad Fanani</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+<%- include ../../components/footer.ejs %>

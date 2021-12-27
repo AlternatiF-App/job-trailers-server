@@ -11,6 +11,7 @@ var flash = require('connect-flash');
 var dashboardRouter = require('./app/routes/dashboardRoutes');
 var categoryRouter = require('./app/routes/categoryRoutes');
 var typeRouter = require('./app/routes/typeRoutes');
+var trailerCategoryRouter = require('./app/routes/trailerCategoryRoutes');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use('/argon', express.static(path.join(__dirname, '/node_modules/argon/')))
 app.use('/', dashboardRouter);
 app.use('/category', categoryRouter);
 app.use('/type', typeRouter);
+app.use('/trailer-category', trailerCategoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
