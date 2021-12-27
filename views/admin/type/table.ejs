@@ -1,0 +1,38 @@
+<div class="table-responsive">
+    <table id="table1" class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="id">ID</th>
+                <th scope="col" class="sort" data-sort="name">Type Name</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            <% for(let i = 0; i < type.length; i++) { %>
+            <tr>
+                <td>
+                    <%= i + 1 %>
+                </td>
+                <td>
+                    <span class="name text-sm">
+                        <%= type[i].name %>
+                    </span>
+                </td>
+                <td class="text-right">
+                    <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </a>
+                        <form action="/type/delete/<%= type[i]._id %>?_method=delete" method="post">
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="/type/edit/<%= type[i]._id %>">Edit</a>
+                                <button class="dropdown-item">Delete</button>
+                            </div>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
